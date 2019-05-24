@@ -1,7 +1,5 @@
 import DateTimeService from "./DateTimeService.js";
 
-var today = new Date()
-
 let _dateTimeService = new DateTimeService()
 
 function drawDateTime() {

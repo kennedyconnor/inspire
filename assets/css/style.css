@@ -11,7 +11,7 @@ body{
 #weather{
   display:flex;
   justify-content: right;
-  font-size: 40px;
+  font-size: 35px;
 }
 
 footer {
@@ -20,3 +20,6 @@ footer {
   left: 15px;
 }
 
+#date-time{
+  font-size: 40px;
+}

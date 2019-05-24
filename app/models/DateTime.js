@@ -1,7 +1,7 @@
 export default class DateTime {
   constructor() {
     let today = new Date()
-    this.day = today.getDay()
+    this.day = today.getDate()
     this.month = today.getMonth()
     this.hour = today.getHours()
     this.minutes = today.getMinutes()

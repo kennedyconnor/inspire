@@ -1,6 +1,7 @@
 // @ts-ignore
 const imgApi = axios.create({
-	baseURL: '//bcw-sandbox.herokuapp.com/api/images',
+	//	baseURL: '//bcw-sandbox.herokuapp.com/api/images',
+	baseURL: "http://www.splashbase.co/api/v1/images/random",
 	timeout: 3000
 });
 
@@ -26,6 +27,7 @@ export default class ImageService {
 	}
 	getImage() {
 		imgApi.get().then(image => {
+			console.log('Image retrieved')
 			console.log(image)
 			let imageData = image.data
 			_setState('image', imageData)

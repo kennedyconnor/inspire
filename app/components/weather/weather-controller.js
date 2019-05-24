@@ -3,8 +3,9 @@ import WeatherService from "./weather-service.js";
 var _weatherService = new WeatherService()
 
 function drawWeather() {
+	let template = _weatherService.Weather.Template
 	console.log("THE WEATHER MAN SAYS:", _weatherService.Weather)
-	document.getElementById('weather').innerText = _weatherService.Weather.kelvin + ' degrees K'
+	document.getElementById('weather').innerHTML = template
 }
 
 export default class WeatherController {

@@ -6,10 +6,17 @@ function _drawTodos() {
 	let template = ''
 	let todos = _todoService.Todos
 	todos.forEach(todo => {
+		let compFormat = 'alert-warning'
+		if (todo.completed) { compFormat = 'alert-primary' }
 		template += `
-		<p>${todo.description}</p>
-		<button onclick="app.controllers.todoController.removeTodo(${todo._id})>Delete</button>
+		<div class="alert ${compFormat}" role="alert">
+  ${todo.description}
+</div>
+		<button onclick="app.controllers.todoController.removeTodo('${todo._id}')">Delete</button>
+		<button onclick="app.controllers.todoController.toggleTodoStatus('${todo._id}')">Completed</button>
+
 		`
+
 	})
 	document.getElementById('todos').innerHTML = template
 }

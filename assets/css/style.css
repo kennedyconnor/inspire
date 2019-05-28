@@ -8,6 +8,11 @@ body{
   text-shadow: 1px 1px 1px black;
 }
 
+.alert{
+  color:black;
+  text-shadow: 0px 0px 0px;
+}
+
 #weather{
   display:flex;
   justify-content: right;

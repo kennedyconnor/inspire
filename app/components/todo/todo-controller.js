@@ -3,29 +3,36 @@ import TodoService from "./todo-service.js";
 const _todoService = new TodoService()
 
 function _drawTodos() {
-	//WHAT IS MY PURPOSE?
+	let template = ''
+	let todos = _todoService.Todos
+	todos.forEach(todo => {
+		template += `
+		<p>${todo.description}</p>
+		<button onclick="app.controllers.todoController.removeTodo(${todo._id})>Delete</button>
+		`
+	})
+	document.getElementById('todos').innerHTML = template
 }
 
 function _drawError() {
 	console.error('[TODO ERROR]', _todoService.TodoError)
-	//document.querySelector('#todo-error').textContent = `${_todoService.TodoError.message}`
+	document.querySelector('#todo-error').textContent = `${_todoService.TodoError.message}`
 }
 
 
 export default class TodoController {
 	constructor() {
 		_todoService.addSubscriber('error', _drawError)
+		_todoService.addSubscriber('todos', _drawTodos)
 		_todoService.getTodos()
-		// Don't forget to add your subscriber
 	}
 
 	addTodo(e) {
 		e.preventDefault()
 		var form = e.target
 		var todo = {
-			// DONT FORGET TO BUILD YOUR TODO OBJECT
+			description: form.todo.value
 		}
-
 		_todoService.addTodo(todo)
 	}
 

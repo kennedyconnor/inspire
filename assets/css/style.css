@@ -6,6 +6,7 @@
 body{
   color:white;
   text-shadow: 1px 1px 1px black;
+  background-size: 100%
 }
 
 main{
@@ -27,11 +28,9 @@ footer {
   position: absolute;
   bottom: 15px;
   left: 15px;
+  background-color: rgba(0, 0, 0, 0.35)
 }
 
 #date-time{
   font-size: 40px;
-}
-body.elementbackground{
-  height: 100vh;
 }

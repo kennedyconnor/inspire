@@ -1,7 +1,7 @@
 // @ts-ignore
 const imgApi = axios.create({
-	//	baseURL: '//bcw-sandbox.herokuapp.com/api/images',
-	baseURL: "http://www.splashbase.co/api/v1/images/random",
+	baseURL: '//bcw-sandbox.herokuapp.com/api/images',
+	//baseURL: "http://www.splashbase.co/api/v1/images/random",
 	timeout: 3000
 });
 
